@@ -1,9 +1,13 @@
+import 'reflect-metadata';
 import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import routes from './routes';
 import AppError from '@shared/errors/AppError';
+import { connectDB } from '@shared/typeorm';
+import '@shared/typeorm';
 
 const app = express();
+const port = 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -23,6 +27,8 @@ app.use(
   },
 );
 
-app.listen(3000, () => {
-  console.log('Server started on port 3333');
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`);
 });
+
+connectDB();
