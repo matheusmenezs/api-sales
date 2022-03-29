@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import UserController from '../controllers/UsersController';
+import isAuthenticated from '../../../shared/http/middlewares/isAuthenticated';
 import {
   createValidator,
   deleteValidator,
@@ -10,7 +11,7 @@ import {
 const usersRouter = Router();
 const userController = new UserController();
 
-usersRouter.get('/', userController.list);
+usersRouter.get('/', isAuthenticated, userController.list);
 usersRouter.get('/:id', showValidator, userController.show);
 usersRouter.post('/', createValidator, userController.create);
 usersRouter.put('/:id', updateValidator, userController.update);
