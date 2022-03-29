@@ -30,3 +30,10 @@ export const deleteValidator = celebrate({
     id: Joi.string().uuid().required(),
   },
 });
+
+export const sessionValidator = celebrate({
+  [Segments.BODY]: {
+    email: Joi.string().email().required(),
+    password: Joi.string().required(),
+  },
+});
