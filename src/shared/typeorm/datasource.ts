@@ -7,9 +7,8 @@ export const dataSource = new DataSource({
   username: 'postgres',
   password: 'docker',
   database: 'apisales',
-  synchronize: true,
-  entities: ['./src/modules/**/typeorm/entities/*.ts'],
   migrations: ['./src/shared/typeorm/migrations/*.ts'],
+  entities: ['./src/modules/**/typeorm/entities/*.ts'],
   cli: {
     migrationsDir: './src/shared/typeorm/migrations',
   },
