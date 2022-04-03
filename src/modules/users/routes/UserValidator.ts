@@ -37,9 +37,3 @@ export const sessionValidator = celebrate({
     password: Joi.string().required(),
   },
 });
-
-export const emailValidator = celebrate({
-  [Segments.BODY]: {
-    email: Joi.string().email().required(),
-  },
-});
