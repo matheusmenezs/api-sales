@@ -5,8 +5,8 @@ export const dataSource = new DataSource({
   host: 'localhost',
   port: 5433,
   username: 'postgres',
-  password: 'docker',
-  database: 'apisales',
+  password: 'postgres',
+  database: 'dbsales',
   migrations: ['./src/shared/typeorm/migrations/*.ts'],
   entities: ['./src/modules/**/typeorm/entities/*.ts'],
   cli: {
