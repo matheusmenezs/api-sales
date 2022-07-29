@@ -29,4 +29,13 @@ ordersRouter.post(
   ordersController.create,
 );
 
+ordersRouter.delete(
+  '/:id',
+  celebrate({
+    [Segments.PARAMS]: {
+      id: Joi.string().uuid().required(),
+    },
+  }),
+  ordersController.delete,
+);
 export default ordersRouter;
