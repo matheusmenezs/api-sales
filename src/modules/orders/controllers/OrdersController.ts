@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import CreateOrderService from '../services/CreateOrderService';
+import DeleteOrderService from '../services/DeleteOrderService';
 import ShowOrderService from '../services/ShowOrderService';
 
 export default class OrdersController {
@@ -24,5 +25,15 @@ export default class OrdersController {
     });
 
     return response.json(order);
+  }
+
+  public async delete(request: Request, response: Response): Promise<Response> {
+    const { id } = request.params;
+
+    const deleteCustomer = new DeleteOrderService();
+
+    await deleteCustomer.delete({ id });
+
+    return response.json([]);
   }
 }
