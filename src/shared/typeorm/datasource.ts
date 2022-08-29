@@ -5,15 +5,16 @@ import Product from '@modules/products/typeorm/entities/Product';
 import User from '@modules/users/typeorm/entities/User';
 import UserToken from '@modules/users/typeorm/entities/UserToken';
 import { DataSource } from 'typeorm';
-import { CreateOrders1609036872019 } from './migrations/1609036872019-CreateOrders';
-import { AddCustomerIdToOrders1609037132700 } from './migrations/1609037132700-AddCustomerIdToOrders';
-import { CreateOrdersProducts1609038202583 } from './migrations/1609038202583-CreateOrdersProducts';
-import { AddOrderIdToOrdersProducts1609038414735 } from './migrations/1609038414735-AddOrderIdToOrdersProducts';
-import { AddProductIdToOrdersProducts1609038674490 } from './migrations/1609038674490-AddProductIdToOrdersProducts';
-import { CreateProducts1607437608841 } from './migrations/1647802471827-CreateProducts';
-import { CreateUsers1648207407461 } from './migrations/1648317183372-CreateUsers';
-import { CreateUsersTokens1648821815049 } from './migrations/1648821815049-CreateUsersTokens';
-import { CreateCustomers1659024372047 } from './migrations/1659024372047-CreateCustomers';
+
+import { CreateUsers1648207407471 } from './migrations/1648207407471-CreateUsers';
+import { CreateUsersTokens1648407407461 } from './migrations/1648407407461-CreateUsersTokens';
+import { CreateProducts1648307407461 } from './migrations/1648307407461-CreateProducts';
+import { CreateCustomers1648507507481 } from './migrations/1648507507481-CreateCustomers';
+import { CreateOrders1648607507481 } from './migrations/1648607507481-CreateOrders';
+import { AddCustomerIdToOrders1648707507481 } from './migrations/1648707507481-AddCustomerIdToOrders';
+import { CreateOrdersProducts1648807507481 } from './migrations/1648807507481-CreateOrdersProducts';
+import { AddOrderIdToOrdersProducts1648907507481 } from './migrations/1648907507481-AddOrderIdToOrdersProducts';
+import { AddProductIdToOrdersProducts1648909507481 } from './migrations/1648909507481-AddProductIdToOrdersProducts';
 
 export const dataSource = new DataSource({
   type: 'postgres',
@@ -24,14 +25,14 @@ export const dataSource = new DataSource({
   database: 'dbsales',
   entities: [User, UserToken, Product, Customer, Order, OrdersProducts],
   migrations: [
-    CreateUsers1648207407461,
-    CreateUsersTokens1648821815049,
-    CreateProducts1607437608841,
-    CreateCustomers1659024372047,
-    CreateOrders1609036872019,
-    AddCustomerIdToOrders1609037132700,
-    CreateOrdersProducts1609038202583,
-    AddOrderIdToOrdersProducts1609038414735,
-    AddProductIdToOrdersProducts1609038674490,
+    CreateUsers1648207407471,
+    CreateUsersTokens1648407407461,
+    CreateProducts1648307407461,
+    CreateCustomers1648507507481,
+    CreateOrders1648607507481,
+    AddCustomerIdToOrders1648707507481,
+    CreateOrdersProducts1648807507481,
+    AddOrderIdToOrdersProducts1648907507481,
+    AddProductIdToOrdersProducts1648909507481,
   ],
 });
