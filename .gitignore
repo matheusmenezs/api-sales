@@ -2,3 +2,11 @@ node_modules
 
 uploads/*
 !uploads/.gitkeep
+
+yarn.lock
+.yarn
+.yarnrc.yml
+
+pgdata
+.env
+
