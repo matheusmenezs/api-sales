@@ -20,13 +20,13 @@ style="max-width: 100%;"/>](https://typeorm.io/)
 
 3. Setup postgres environment inside docker-compose.yml file, change the value of DB, USER, PASSWORD and PORT with your database credentials:
 
-![config_docker](https://user-images.githubusercontent.com/64173311/188461751-a3a1fbae-4aa1-45ab-8489-51efe3b8a7c0.png)
+![config_docker](https://user-images.githubusercontent.com/64173311/188487370-4b73e773-2aba-4890-aade-a9590ec86313.png)
 
 4. Run in terminal: `docker-compose up -d` to initialize container.
 
 5. Configure the database on a platform for PostgreSQL. Here is configuration in Dbeaver, using the same settings as the `.yml` file: 
 
-![configure_dbeaver](https://user-images.githubusercontent.com/64173311/188461447-ba062fcd-4b65-418e-8e44-fbddb7ea3df4.PNG)
+![config_dbeaver](https://user-images.githubusercontent.com/64173311/188487420-15562aa8-e96e-406e-b2f8-a2b5312c20e7.PNG)
 
 6. Run in terminal: `yarn typeorm migration:run -d ./src/shared/typeorm/datasource.ts` to execute migrations.
 
