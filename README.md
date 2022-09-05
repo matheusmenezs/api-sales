@@ -9,19 +9,8 @@ The project was implemented during a learning incentive program at [PD Soluçõe
 
 ### Technologies:
 
-<img align="center" alt="Nodejs" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" style="max-width: 100%;"> [Node.js](https://nodejs.org/en/) 
-
-<img align="center" alt="Ts" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg" style="max-width: 100%;"> [Typescript](https://www.typescriptlang.org/)
-
-<img align="center" alt="Ex" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg" style="max-width: 100%;"> [Express](https://expressjs.com/pt-br/)
-
-<img align="center" alt="Do" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" style="max-width: 100%;"> [Docker](https://www.docker.com/)
-
-<img align="center" alt="Ps" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" style="max-width: 100%;">[PostgresSQL](https://www.postgresql.org/)
-
-<img align="center" alt="To" height="30" width="40" src="https://img.stackshare.io/service/7419/20165699.png" 
-style="max-width: 100%;">[TypeORM](https://typeorm.io/#/)
-
+[<img align="center" alt="Nodejs" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" style="max-width: 100%;"/>](https://nodejs.org/en/) [<img align="center" alt="Ts" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg" style="max-width: 100%;"/>](https://www.typescriptlang.org/) [<img align="center" alt="Ex" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg" style="max-width: 100%;"/>](https://expressjs.com/pt-br/) [<img align="center" alt="Do" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" style="max-width: 100%;"/>](https://www.docker.com/) [<img align="center" alt="Ps" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" style="max-width: 100%;"/>](https://www.postgresql.org/) [<img align="center" alt="To" height="30" width="60" src="https://github.com/typeorm/typeorm/raw/master/resources/logo_big.png" 
+style="max-width: 100%;"/>](https://typeorm.io/)
 
 
 ### Run the Project:
