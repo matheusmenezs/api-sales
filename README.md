@@ -49,15 +49,15 @@ The project was implemented during a learning incentive program at [PD Soluçõe
 | `POST` /password/forgot |token request for password reset|
 | `POST` /password/reset  |reset password using requested token|
 | `POST` /customers       |create customer|
-| `UPDATE` /customers/id  |update customer using id|
-| `DELETE` /customers/id  |delete customer using id|
-| `GET` /customers        |list customer|
-| `GET` /customers/id     |view profile based on customer id|
+| `UPDATE` /customers/id  |update customer using the id|
+| `DELETE` /customers/id  |delete customer using the id|
+| `GET` /customers        |list customers|
+| `GET` /customers/id     |view one customer using the id|
 | `POST` /products        |create product|
-| `UPDATE` /products/id   |update product using id|
-| `DELETE` /products/id   |delete product using id|
+| `UPDATE` /products/id   |update product using the id|
+| `DELETE` /products/id   |delete product using the id|
 | `GET` /products         |list products|
-| `GET` /products/id      |view product using id|
+| `GET` /products/id      |view product using the id|
 | `POST` /orders          |create order|
-| `DELETE` /orders/id     |delete order using id|
-| `GET` /orders/id        |view order using id|
+| `DELETE` /orders/id     |delete order using the id|
+| `GET` /orders/id        |view one order using the id|
