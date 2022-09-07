@@ -40,24 +40,24 @@ The project was implemented during a learning incentive program at [PD Soluçõe
 
 | Name                    | Function |
 | ----------------------- | -------- |
-| `POST` /users           |          |
-| `PATCH` /users/avatar   |          |
-| `GET` /users            |          |
-| `POST` /sessions        |          |
-| `UPDATE` /profile       |          |
-| `GET` /profile          |          |
-| `POST` /password/forgot |          |
-| `POST` /password/reset  |          |
-| `POST` /customers       |          |
-| `UPDATE` /customers/id  |          |
-| `DELETE` /customers/id  |          |
-| `GET` /customers        |          |
-| `GET` /customers/id     |          |
-| `POST` /products        |          |
-| `UPDATE` /products/id   |          |
-| `DELETE` /products/id   |          |
-| `GET` /products         |          |
-| `GET` /products/id      |          |
-| `POST` /orders          |          |
-| `DELETE` /orders/id     |          |
-| `GET` /orders/id        |          |
+| `POST` /users           |create user|
+| `PATCH` /users/avatar   |user avatar upload|
+| `GET` /users            |list users|
+| `POST` /sessions        |authenticate user|
+| `UPDATE` /profile       |update user profile|
+| `GET` /profile          |view authenticated user profile|
+| `POST` /password/forgot |token request for password reset|
+| `POST` /password/reset  |reset password using requested token|
+| `POST` /customers       |create customer|
+| `UPDATE` /customers/id  |update customer using id|
+| `DELETE` /customers/id  |delete customer using id|
+| `GET` /customers        |list customer|
+| `GET` /customers/id     |view profile based on customer id|
+| `POST` /products        |create product|
+| `UPDATE` /products/id   |update product using id|
+| `DELETE` /products/id   |delete product using id|
+| `GET` /products         |list products|
+| `GET` /products/id      |view product using id|
+| `POST` /orders          |create order|
+| `DELETE` /orders/id     |delete order using id|
+| `GET` /orders/id        |view order using id|
