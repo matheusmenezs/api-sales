@@ -12,3 +12,17 @@ services:
       - ./pgdata:/var/lib/postgresql/data
     ports:
       - "5433:5432"
+
+  redis:
+    container_name: redis_container
+    image: 'redis:alpine'
+    ports:
+      - "6379:6379"
+
+  redisinsight:
+    container_name: redisinsight_container
+    image: 'redislabs/redisinsight:latest'
+    ports:
+      - "8001:8001"
+
+  
