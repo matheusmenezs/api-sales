@@ -5,7 +5,7 @@ import sessionsRouter from '@modules/users/routes/SessionsRoutes';
 import passwordRouter from '@modules/users/routes/PasswordRoutes';
 import profileRouter from '@modules/users/routes/ProfileRoutes';
 import customersRouter from '@modules/customers/infra/http/routes/customers.routes';
-import ordersRouter from '@modules/orders/routes/orders.routes';
+import ordersRouter from '@modules/orders/infra/http/routes/orders.routes';
 
 const routes = Router();
 
