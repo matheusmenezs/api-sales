@@ -1,4 +1,4 @@
-import { dataSource } from '@shared/typeorm/datasource';
+import { dataSource } from '@shared/infra/typeorm/datasource';
 import User from '../entities/User';
 
 export const UsersRepository = dataSource.getRepository(User).extend({

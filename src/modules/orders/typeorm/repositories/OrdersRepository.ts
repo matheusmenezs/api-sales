@@ -1,6 +1,6 @@
 import Order from '../entities/Order';
-import Customer from '@modules/customers/typeorm/entities/Customer';
-import { dataSource } from '@shared/typeorm/datasource';
+import Customer from '@modules/customers/infra/typeorm/entities/Customer';
+import { dataSource } from '@shared/infra/typeorm/datasource';
 
 interface IProduct {
   product_id: string;

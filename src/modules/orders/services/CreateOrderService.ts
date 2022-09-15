@@ -1,4 +1,4 @@
-import { CustomersRepository } from '@modules/customers/typeorm/repositories/CustomersRepository';
+import { CustomersRepository } from '@modules/customers/infra/typeorm/repositories/CustomersRepository';
 import { ProductsRepository } from '@modules/products/typeorm/repositories/ProductsRepository';
 import { OrdersRepository } from '../typeorm/repositories/OrdersRepository';
 import AppError from '@shared/errors/AppError';
@@ -35,7 +35,9 @@ class CreateOrderService {
     );
 
     if (checkInexistentProducts.length) {
-      throw new AppError(`Could not find product ${checkInexistentProducts[0].id}.`); //devolver primeiro id não encontrado
+      throw new AppError(
+        `Could not find product ${checkInexistentProducts[0].id}.`,
+      ); //devolver primeiro id não encontrado
     }
 
     const quantityAvailable = products.filter(

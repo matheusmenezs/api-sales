@@ -1,5 +1,5 @@
 import { In } from 'typeorm';
-import { dataSource } from '@shared/typeorm/datasource';
+import { dataSource } from '@shared/infra/typeorm/datasource';
 import Product from '../entities/Product';
 
 interface IFindProducts {

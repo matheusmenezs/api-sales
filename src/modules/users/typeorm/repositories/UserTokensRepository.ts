@@ -1,4 +1,4 @@
-import { dataSource } from '@shared/typeorm/datasource';
+import { dataSource } from '@shared/infra/typeorm/datasource';
 import UserToken from '../entities/UserToken';
 
 export const UserTokensRepository = dataSource.getRepository(UserToken).extend({
