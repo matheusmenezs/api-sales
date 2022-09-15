@@ -1,9 +1,11 @@
 import { Request, Response } from 'express';
-import ListUserService from '../services/ListUserService';
-import CreateUserService from '../services/CreateUserService';
-import UpdateUserService from '../services/UpdateUserService';
-import DeleteUserService from '../services/DeleteUserService';
-import ShowUserService from '../services/ShowUserService';
+
+import ListUserService from '@modules/users/services/ListUserService';
+import CreateUserService from '@modules/users/services/CreateUserService';
+import UpdateUserService from '@modules/users/services/UpdateUserService';
+import DeleteUserService from '@modules/users/services/DeleteUserService';
+import ShowUserService from '@modules/users/services/ShowUserService';
+
 import { instanceToInstance } from 'class-transformer';
 
 export default class UserController {

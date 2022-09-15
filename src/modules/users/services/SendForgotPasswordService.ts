@@ -1,8 +1,8 @@
 import EtherealMail from '@config/mail/EtherealMail';
 import AppError from '@shared/errors/AppError';
 import path from 'path';
-import { UsersRepository } from '../typeorm/repositories/UsersRepository';
-import { UserTokensRepository } from '../typeorm/repositories/UserTokensRepository';
+import { UsersRepository } from '../infra/typeorm/repositories/UsersRepository';
+import { UserTokensRepository } from '../infra/typeorm/repositories/UserTokensRepository';
 
 class SendForgotPasswordService {
   public async execute(email: string): Promise<void> {

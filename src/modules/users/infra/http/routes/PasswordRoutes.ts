@@ -7,7 +7,11 @@ const passwordRouter = Router();
 const forgotPasswordController = new ForgotPasswordController();
 const resetPasswordController = new ResetPasswordController();
 
-passwordRouter.post('/forgot', emailValidator, forgotPasswordController.generate);
+passwordRouter.post(
+  '/forgot',
+  emailValidator,
+  forgotPasswordController.generate,
+);
 passwordRouter.post('/reset', resetValidator, resetPasswordController.create);
 
 export default passwordRouter;
