@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import productsRouter from '@modules/products/routes/ProductsRoutes';
+import productsRouter from '@modules/products/infra/http/routes/ProductsRoutes';
 import usersRouter from '@modules/users/routes/UsersRoutes';
 import sessionsRouter from '@modules/users/routes/SessionsRoutes';
 import passwordRouter from '@modules/users/routes/PasswordRoutes';

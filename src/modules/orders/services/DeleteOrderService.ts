@@ -1,4 +1,4 @@
-import { ProductsRepository } from '@modules/products/typeorm/repositories/ProductsRepository';
+import { ProductsRepository } from '@modules/products/infra/typeorm/repositories/ProductsRepository';
 import AppError from '@shared/errors/AppError';
 import { OrdersRepository } from '../infra/typeorm/repositories/OrdersRepository';
 

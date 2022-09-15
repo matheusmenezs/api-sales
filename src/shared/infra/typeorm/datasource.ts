@@ -1,7 +1,7 @@
 import Customer from '@modules/customers/infra/typeorm/entities/Customer';
 import Order from '@modules/orders/infra/typeorm/entities/Order';
 import OrdersProducts from '@modules/orders/infra/typeorm/entities/OrdersProducts';
-import Product from '@modules/products/typeorm/entities/Product';
+import Product from '@modules/products/infra/typeorm/entities/Product';
 import User from '@modules/users/typeorm/entities/User';
 import UserToken from '@modules/users/typeorm/entities/UserToken';
 import { DataSource } from 'typeorm';
