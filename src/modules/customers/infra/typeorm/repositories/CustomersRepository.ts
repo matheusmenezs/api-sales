@@ -1,5 +1,5 @@
 import Customer from '../entities/Customer';
-import { dataSource } from '@shared/typeorm/datasource';
+import { dataSource } from '@shared/infra/typeorm/datasource';
 
 export const CustomersRepository = dataSource.getRepository(Customer).extend({
   async findByName(name: string): Promise<Customer | null> {
