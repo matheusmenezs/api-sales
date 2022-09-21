@@ -1,9 +1,15 @@
-import Customer from '../infra/typeorm/entities/Customer';
-import CustomersRepository from '../infra/typeorm/repositories/CustomersRepository';
+import { inject, injectable } from 'tsyringe';
+import { ICustomer } from '../domain/models/ICustomer';
+import { ICustomersRepository } from '../domain/repositories/ICustomersRepository';
+@injectable()
 class ListCustomerService {
-  public async execute(): Promise<Customer[]> {
-    const customersRepository = new CustomersRepository();
-    const customers = customersRepository.findAll();
+  constructor(
+    @inject('CustomersRepository')
+    private customersRepository: ICustomersRepository,
+  ) {}
+
+  public async execute(): Promise<ICustomer[]> {
+    const customers = this.customersRepository.findAll();
 
     return customers;
   }
