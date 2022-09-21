@@ -8,4 +8,5 @@ export interface ICustomersRepository {
   findByEmail(email: string): Promise<ICustomer | null>;
   create(data: ICreateCustomer): Promise<ICustomer>;
   save(customer: ICustomer): Promise<ICustomer>;
+  remove(customer: ICustomer): Promise<void>;
 }
