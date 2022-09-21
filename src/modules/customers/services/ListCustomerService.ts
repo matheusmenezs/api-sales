@@ -1,9 +1,9 @@
 import Customer from '../infra/typeorm/entities/Customer';
-import { CustomersRepository } from '../infra/typeorm/repositories/CustomersRepository';
-
+import CustomersRepository from '../infra/typeorm/repositories/CustomersRepository';
 class ListCustomerService {
   public async execute(): Promise<Customer[]> {
-    const customers = CustomersRepository.find();
+    const customersRepository = new CustomersRepository();
+    const customers = customersRepository.findAll();
 
     return customers;
   }

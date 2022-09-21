@@ -1,19 +1,19 @@
 import AppError from '@shared/errors/AppError';
-import { CustomersRepository } from '../infra/typeorm/repositories/CustomersRepository';
-
+import CustomersRepository from '../infra/typeorm/repositories/CustomersRepository';
 interface IRequest {
   id: string;
 }
 
 class DeleteCustomerService {
   public async execute({ id }: IRequest): Promise<void> {
-    const customer = await CustomersRepository.findById(id);
+    const customersRepository = new CustomersRepository();
+    const customer = await customersRepository.findById(id);
 
     if (!customer) {
       throw new AppError('Customer not found.');
     }
 
-    await CustomersRepository.remove(customer);
+    await customersRepository.remove(customer);
   }
 }
 
