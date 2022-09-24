@@ -21,7 +21,7 @@ class SendForgotPasswordService {
       throw new AppError('User does not exists.');
     }
 
-    const { token } = await this.usersTokenRepository.generate(user.id); //Refactor UsersTokens
+    const { token } = await this.usersTokenRepository.generate(user.id);
 
     console.log(token);
 
