@@ -1,18 +1,27 @@
 import EtherealMail from '@config/mail/EtherealMail';
 import AppError from '@shared/errors/AppError';
 import path from 'path';
-import { UsersRepository } from '../infra/typeorm/repositories/UsersRepository';
-import { UserTokensRepository } from '../infra/typeorm/repositories/UserTokensRepository';
+import { inject, injectable } from 'tsyringe';
+import { IUserRepository } from '../domain/repositories/IUserRepository';
+import { IUserTokenRepository } from '../domain/repositories/IUserTokenRepository';
 
+@injectable()
 class SendForgotPasswordService {
+  constructor(
+    @inject('UsersRepository')
+    private usersRepository: IUserRepository,
+
+    @inject('UsersTokenRepository')
+    private usersTokenRepository: IUserTokenRepository,
+  ) {}
   public async execute(email: string): Promise<void> {
-    const user = await UsersRepository.findByEmail(email);
+    const user = await this.usersRepository.findByEmail(email);
 
     if (!user) {
       throw new AppError('User does not exists.');
     }
 
-    const { token } = await UserTokensRepository.generate(user.id);
+    const { token } = await this.usersTokenRepository.generate(user.id); //Refactor UsersTokens
 
     console.log(token);
 

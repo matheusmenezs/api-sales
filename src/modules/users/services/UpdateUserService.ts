@@ -1,6 +1,7 @@
 import AppError from '@shared/errors/AppError';
-import User from '../infra/typeorm/entities/User';
-import { UsersRepository } from '../infra/typeorm/repositories/UsersRepository';
+import { inject } from 'tsyringe';
+import { IUser } from '../domain/model/IUser';
+import { IUserRepository } from '../domain/repositories/IUserRepository';
 
 interface IRequest {
   id: string;
@@ -10,8 +11,17 @@ interface IRequest {
 }
 
 class UpdateUserService {
-  public async execute({ id, name, email, password }: IRequest): Promise<User> {
-    const user = await UsersRepository.findById(id);
+  constructor(
+    @inject('UsersRepository')
+    private usersRepository: IUserRepository,
+  ) {}
+  public async execute({
+    id,
+    name,
+    email,
+    password,
+  }: IRequest): Promise<IUser> {
+    const user = await this.usersRepository.findById(id);
     if (!user) {
       throw new AppError('User not found.');
     }
@@ -20,7 +30,7 @@ class UpdateUserService {
     user.email = email;
     user.password = password;
 
-    await UsersRepository.save(user);
+    await this.usersRepository.save(user);
 
     return user;
   }
