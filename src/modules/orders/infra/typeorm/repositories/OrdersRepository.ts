@@ -1,35 +1,38 @@
 import Order from '../entities/Order';
-import Customer from '@modules/customers/infra/typeorm/entities/Customer';
 import { dataSource } from '@shared/infra/typeorm/datasource';
+import { IOrdersRepository } from '@modules/orders/domain/repositories/IOrdersRepository';
+import { Repository } from 'typeorm';
+import { IOrder } from '@modules/orders/domain/model/IOrder';
+import { ICreateOrder } from '@modules/orders/domain/model/ICreateOrder';
 
-interface IProduct {
-  product_id: string;
-  price: number;
-  quantity: number;
-}
-
-interface IRequest {
-  customer: Customer;
-  products: IProduct[];
-}
-
-export const OrdersRepository = dataSource.getRepository(Order).extend({
-  async findById(id: string): Promise<Order | null> {
-    const order = this.findOne({
+export class OrdersRepository implements IOrdersRepository {
+  private ormRepository: Repository<IOrder>;
+  constructor() {
+    this.ormRepository = dataSource.getRepository(Order);
+  }
+  public async findById(id: string): Promise<IOrder | null> {
+    const order = this.ormRepository.findOne({
       where: { id },
       relations: ['order_products', 'customer'],
     });
     return order;
-  },
+  }
 
-  async createOrder({ customer, products }: IRequest): Promise<Order> {
-    const order = this.create({
+  public async createOrder({
+    customer,
+    products,
+  }: ICreateOrder): Promise<IOrder> {
+    const order = this.ormRepository.create({
       customer,
       order_products: products,
     });
 
-    await this.save(order);
+    await this.ormRepository.save(order);
 
     return order;
-  },
-});
+  }
+
+  public async remove(order: IOrder): Promise<void> {
+    await this.ormRepository.remove(order);
+  }
+}

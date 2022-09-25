@@ -1,14 +1,20 @@
-import { ProductsRepository } from '@modules/products/infra/typeorm/repositories/ProductsRepository';
+import { IProductsRepository } from '@modules/products/domain/repositories/IProductsRepository';
 import AppError from '@shared/errors/AppError';
-import { OrdersRepository } from '../infra/typeorm/repositories/OrdersRepository';
+import { inject, injectable } from 'tsyringe';
+import { IDeleteOrder } from '../domain/model/IShowOrder';
+import { IOrdersRepository } from '../domain/repositories/IOrdersRepository';
 
-interface IRequest {
-  id: string;
-}
-
+@injectable()
 class DeleteOrderService {
-  public async delete({ id }: IRequest): Promise<void> {
-    const order = await OrdersRepository.findById(id);
+  constructor(
+    @inject('OrdersRepository')
+    private ordersRepository: IOrdersRepository,
+
+    @inject('ProductsRepository')
+    private productsRepository: IProductsRepository,
+  ) {}
+  public async delete({ id }: IDeleteOrder): Promise<void> {
+    const order = await this.ordersRepository.findById(id);
 
     if (!order) {
       throw new AppError('Order not found.');
@@ -18,7 +24,7 @@ class DeleteOrderService {
       quantity: product.quantity,
     }));
 
-    const existsProducts = await ProductsRepository.findAllByIds(products);
+    const existsProducts = await this.productsRepository.findAllByIds(products);
 
     if (!existsProducts.length) {
       throw new AppError('Could not find any products with the given ids.');
@@ -31,9 +37,9 @@ class DeleteOrderService {
         product.quantity,
     }));
 
-    await ProductsRepository.save(updatedProductQuantity);
+    await this.productsRepository.updateStock(updatedProductQuantity);
 
-    await OrdersRepository.remove(order);
+    await this.ordersRepository.remove(order);
   }
 }
 
