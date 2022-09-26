@@ -1,28 +1,31 @@
-version: '3.5'
+version: '3.8'
 
 services:
-  postgres:
-    container_name: dbsales_container
+  postgresdb:
     image: 'postgres:latest'
+    container_name: dbsales_container
+    restart: always
     environment:
-      POSTGRES_DB: ${process.env.POSTGRES_DB}
-      POSTGRES_USER: ${process.env.POSTGRES_USER}
-      POSTGRES_PASSWORD: ${process.env.POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     ports:
-      - "${process.env.POSTGRES_PORT}:5432"
+      - "${POSTGRES_PORT}:5432"
 
   redis:
     container_name: redis_container
     image: 'redis:alpine'
     ports:
-      - "${process.env.REDIS_PORT}:6379"
+    - "${REDIS_PORT}:6379"
 
   redisinsight:
     container_name: redisinsight_container
     image: 'redislabs/redisinsight:latest'
     ports:
-      - "8001:8001"
+      - '8001:8001'
+
+
 
 
