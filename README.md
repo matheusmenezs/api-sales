@@ -25,23 +25,17 @@ Therefore, it is necessary to install the Docker tool in order to run the applic
 
 2. Run `yarn` in terminal to install packages
 
-3. Setup postgres environment inside docker-compose.yml file, change the value of DB, USER, PASSWORD and PORT with your database credentials:
+3. Create the `.env` file based on the `.env.example` and generate a secret. Change the values of Postgre environment variables with your database credentials
 
-![config_docker](https://user-images.githubusercontent.com/64173311/188487370-4b73e773-2aba-4890-aade-a9590ec86313.png)
+4. Configure the database on a platform for PostgreSQL with your database credentials
 
-4. Run in terminal: `docker-compose up -d` to initialize container.
-
-5. Configure the database on a platform for PostgreSQL. Here is configuration in Dbeaver, using the same settings as the `.yml` file:
-
-![config_dbeaver](https://user-images.githubusercontent.com/64173311/188487420-15562aa8-e96e-406e-b2f8-a2b5312c20e7.PNG)
+5. Run in terminal: `docker-compose up -d` to initialize container.
 
 6. Run in terminal: `yarn typeorm migration:run -d ./src/shared/typeorm/datasource.ts` to execute migrations.
 
-7. Create the `.env` file based on the `.env.example` and generate a secret
+7. Extract zip archive and import json to Insomnia or in other program to test APIs: [Request Collection](https://github.com/matheusmenezs/api-sales/files/9490442/apisales_insomnia.zip)
 
-8. Extract zip archive and import json to Insomnia or in other program to test APIs: [Request Collection](https://github.com/matheusmenezs/api-sales/files/9490442/apisales_insomnia.zip)
-
-9. Run in terminal: `yarn dev` to initialize project.
+8. Run in terminal: `yarn dev` to initialize project.
 
 ### Endpoints
 
