@@ -21,19 +21,19 @@ Therefore, it is necessary to install the Docker tool in order to run the applic
 
 ### Run the Project:
 
-1. Clone the repository, run in terminal: `git clone https://github.com/matheusmenezs/api-sales.git`
+1. Clone the repository, run in terminal: `git clone https://github.com/matheusmenezs/api-sales.git`.
 
-2. Run `yarn` in terminal to install packages
+2. Run `yarn` in terminal to install packages.
 
-3. Create the `.env` file based on the `.env.example` and generate a secret. Change the values of Postgre environment variables with your database credentials
+3. Create the `.env` file based on the `.env.example` and generate a secret. Set the values of Postgres environment variables with your database credentials.
 
-4. Configure the database on a platform for PostgreSQL with your database credentials
+4. Configure the database on a platform for PostgreSQL with credentials that were defined.
 
 5. Run in terminal: `docker-compose up -d` to initialize container.
 
 6. Run in terminal: `yarn typeorm migration:run -d ./src/shared/typeorm/datasource.ts` to execute migrations.
 
-7. Extract zip archive and import json to Insomnia or in other program to test APIs: [Request Collection](https://github.com/matheusmenezs/api-sales/files/9490442/apisales_insomnia.zip)
+7. Extract zip archive and import json to Insomnia or in other program to test APIs: [Request Collection](https://github.com/matheusmenezs/api-sales/files/9490442/apisales_insomnia.zip).
 
 8. Run in terminal: `yarn dev` to initialize project.
 
