@@ -19,10 +19,11 @@ import { AddProductIdToOrdersProducts1648909507481 } from './migrations/16489095
 export const dataSource = new DataSource({
   type: 'postgres',
   host: 'localhost',
-  port: 5433,
-  username: 'postgres',
-  password: 'postgres',
-  database: 'dbsales',
+  port: Number(process.env.POSTGRES_PORT),
+  database: process.env.POSTGRES_DB,
+  username: process.env.POSTGRES_USER,
+  password: process.env.POSTGRES_PASSWORD,
+
   entities: [User, UserToken, Product, Customer, Order, OrdersProducts],
   migrations: [
     CreateUsers1648207407471,
