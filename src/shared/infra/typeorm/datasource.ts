@@ -5,6 +5,7 @@ import Product from '@modules/products/infra/typeorm/entities/Product';
 import User from '@modules/users/infra/typeorm/entities/User';
 import UserToken from '@modules/users/infra/typeorm/entities/UserToken';
 import { DataSource } from 'typeorm';
+import dotenv from 'dotenv';
 
 import { CreateUsers1648207407471 } from './migrations/1648207407471-CreateUsers';
 import { CreateUsersTokens1648407407461 } from './migrations/1648407407461-CreateUsersTokens';
@@ -15,6 +16,9 @@ import { AddCustomerIdToOrders1648707507481 } from './migrations/1648707507481-A
 import { CreateOrdersProducts1648807507481 } from './migrations/1648807507481-CreateOrdersProducts';
 import { AddOrderIdToOrdersProducts1648907507481 } from './migrations/1648907507481-AddOrderIdToOrdersProducts';
 import { AddProductIdToOrdersProducts1648909507481 } from './migrations/1648909507481-AddProductIdToOrdersProducts';
+
+// Load env file
+dotenv.config({ path: '.env' });
 
 export const dataSource = new DataSource({
   type: 'postgres',
