@@ -33,7 +33,7 @@ Therefore, it is necessary to install the Docker tool in order to run the applic
 
 6. Run in terminal: `yarn typeorm migration:run -d ./src/shared/typeorm/datasource.ts` to execute migrations.
 
-7. Extract zip archive and import json to Insomnia or in other program to test APIs: [Request Collection](https://github.com/matheusmenezs/api-sales/files/9490442/apisales_insomnia.zip).
+7. Copy raw contents of `api.json` from `docs` to Insomnia or in other program to test APIs.
 
 8. Run in terminal: `yarn dev` to initialize project.
 
