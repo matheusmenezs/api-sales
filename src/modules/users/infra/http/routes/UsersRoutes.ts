@@ -15,7 +15,7 @@ const usersRouter = Router();
 const userController = new UserController();
 
 const userAvatarController = new UserAvatarController();
-const upload = multer(uploadConfig);
+const upload = multer(uploadConfig.multer);
 
 usersRouter.get('/', isAuthenticated, userController.list);
 usersRouter.get('/:id', isAuthenticated, showValidator, userController.show);
