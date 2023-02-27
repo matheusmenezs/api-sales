@@ -1,10 +1,11 @@
 import EtherealMail from '@config/mail/EtherealMail';
+import SESMail from '@config/mail/SESMail';
 import AppError from '@shared/errors/AppError';
 import path from 'path';
 import { inject, injectable } from 'tsyringe';
 import { IUserRepository } from '../domain/repositories/IUserRepository';
 import { IUserTokenRepository } from '../domain/repositories/IUserTokenRepository';
-
+import mailConfig from '@config/mail/mail';
 @injectable()
 class SendForgotPasswordService {
   constructor(
@@ -31,6 +32,24 @@ class SendForgotPasswordService {
       'views',
       'forgot_password.hbs',
     );
+
+    if (mailConfig.driver === 'ses') {
+      await SESMail.sendMail({
+        to: {
+          name: user.name,
+          email: user.email,
+        },
+        subject: '[API Vendas] Recuperação de Senha',
+        templateData: {
+          file: forgotPasswordTemplate,
+          variables: {
+            name: user.name,
+            link: `${process.env.APP_WEB_URL}/reset_password?token=${token}`,
+          },
+        },
+      });
+      return;
+    }
 
     await EtherealMail.sendMail({
       to: {
