@@ -1,4 +1,4 @@
-import RedisCache from '@shared/cache/RedisCache';
+import redisCache from '@shared/cache/RedisCache';
 import { inject, injectable } from 'tsyringe';
 import { IProductsRepository } from '../domain/repositories/IProductsRepository';
 import { IProduct } from '../domain/model/IProduct';
@@ -10,7 +10,7 @@ class ListProductService {
     private productsRepository: IProductsRepository,
   ) {}
   public async execute(): Promise<IProduct[]> {
-    const redisCache = new RedisCache();
+    //const redisCache = new RedisCache();
 
     let products = await redisCache.recover<IProduct[]>(
       'api-vendas-PRODUCT_LIST',
